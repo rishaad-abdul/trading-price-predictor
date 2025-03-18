@@ -36,14 +36,14 @@ st.set_page_config(page_title='Stock Price Predictor', layout='wide')
 # Define the base URLs for accessing the API
 BASE_URLS = [
     # "https://api-handler-ddc-free-api.hf.space/v2"
-    "https://api.ddc.xiolabs.xyz/v1"
+    "https://api.sree.shop/v1"
 ]
 
 # Initialize the OpenAI client with a specific base URL and API key
 client = OpenAI(
     base_url=BASE_URLS[0],  # Using the first URL in the list
     # api_key="DDC-Free-For-Subscribers-YT-@DevsDoCode"
-    api_key="Free-For-YT-Subscribers-@DevsDoCode-WatchFullVideo"
+    api_key="ddc-dJ72dJ85WuKMrINtNG6Rd9E4lHhxXmWMwJeYk4WlxSYhSPPFV3"
 )
 # Load FinBERT Model and Tokenizer
 @st.cache_resource
@@ -337,7 +337,7 @@ def generate_explanation(headline, sentiment):
     Based on this information, provide an explanation of how this news might impact the stock or forex or crypto or futures&options market or the specific asset mentioned, provide a theoretical signal whether user should buy/sell or long/short the given asset. Consider historical market trends, potential investor reactions, and the language in the news.
     """
     response = client.chat.completions.create(
-        model="provider-3/gpt-4o-mini",
+        model="gpt-4o-2024-05-13",
         messages=[
             {"role": "system", "content": "You are a financial expert providing context-aware market analysis."},
             {"role": "user", "content": prompt},
