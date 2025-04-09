@@ -62,8 +62,8 @@ except Exception as e:
 @st.cache_resource
 def load_finbert():
     try:
-        tokenizer = BertTokenizer.from_pretrained("yiyanghkust/finbert-tone")
-        modeL = BertForSequenceClassification.from_pretrained("yiyanghkust/finbert-tone")
+        tokenizer = BertTokenizer.from_pretrained("yiyanghkust/finbert-tone", local_files_only=False)
+        modeL = BertForSequenceClassification.from_pretrained("yiyanghkust/finbert-tone", local_files_only=False)
         return tokenizer, modeL
     except Exception as e:
         st.warning(f"Could not load FinBERT model: {str(e)}")
